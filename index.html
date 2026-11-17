@@ -135,6 +135,42 @@ a{color:var(--teal)}
 .note-list{margin:0;padding-left:18px}
 .note-list li{margin:6px 0;font-size:14px}
 .footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 16px 36px}
+/* tatsuya — cute zone (only Tatsuya's lists) */
+.tatsuya-card{border:3px solid #9ADBB5;border-radius:28px;box-shadow:0 6px 0 #DFF5E6}
+.tatsuya-card.walkabout{border-color:#FFC98A;box-shadow:0 6px 0 #FFEDD3}
+.tatsuya-card .badge-paw{background:#D6336C;color:#fff;border:2px solid #111}
+.animals-card .progress{background:#FFE8EE;border-color:#F2C4D2}
+.animals-card .progress i{background:#FF8FAB}
+.paw-trail{display:flex;gap:14px;justify-content:center;padding:8px 0 2px;font-size:15px;line-height:1}
+.paw-trail span{display:inline-block;opacity:.45}
+.paw-trail span:nth-child(1){transform:rotate(-18deg) translateY(2px)}
+.paw-trail span:nth-child(2){transform:rotate(14deg);opacity:.7}
+.paw-trail span:nth-child(3){transform:rotate(-10deg) translateY(3px);opacity:.5}
+.paw-trail span:nth-child(4){transform:rotate(20deg);opacity:.75}
+.paw-trail span:nth-child(5){transform:rotate(-16deg) translateY(2px);opacity:.45}
+/* animals */
+.animals-card{background-color:#FFFDF4;background-image:radial-gradient(#FFE3AE 2px,transparent 2.6px),radial-gradient(#CDEEDD 2px,transparent 2.6px);background-size:26px 26px,26px 26px;background-position:0 0,13px 13px;border:3px solid #FFD9A8;border-radius:28px;box-shadow:0 6px 0 #FFEDD3}
+.animals{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:700px){.animals{grid-template-columns:repeat(4,1fr)}}
+.animal-card{font-family:inherit;text-align:center;background:#FFF1DC;border:2.5px dashed #E8B96F;border-radius:24px;padding:16px 10px 14px;cursor:pointer;color:var(--ink);position:relative;transition:border-color .2s,background .2s,transform .2s}
+.animal-card::after{content:"🐾";position:absolute;top:7px;right:10px;font-size:14px;opacity:.22;transform:rotate(18deg)}
+.animal-card:nth-child(2){background:#EAF6FF;border-color:#9CC8E8}
+.animal-card:nth-child(3){background:#E6F7EE;border-color:#9ADBB5}
+.animal-card:nth-child(4){background:#FFE8EE;border-color:#F2A9BC}
+.animal-card:nth-child(5){background:#FFF6C5;border-color:#E3CE6B}
+.animal-card:nth-child(6){background:#FFF1DC;border-color:#E8B96F}
+.animal-card:nth-child(7){background:#E6F7EE;border-color:#9ADBB5}
+.animal-card .emoji{font-size:36px;line-height:1;width:64px;height:64px;margin:0 auto;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:50%;border:2px solid rgba(17,17,17,.08);box-shadow:0 3px 0 rgba(17,17,17,.08)}
+.animal-card b{font-size:15px;display:block;margin-top:8px;line-height:1.3}
+.animal-card small{color:#5B6470;font-size:11px;line-height:1.45;display:block;margin-top:4px}
+.animal-card .stamp{display:none;margin:9px auto 0;width:fit-content;background:#D6336C;color:#fff;font-size:11px;font-weight:900;padding:5px 11px;border-radius:999px;border:2px solid #111;transform:rotate(-4deg)}
+.animal-card.met{background:var(--yellow-soft);border:2.5px solid #111}
+.animal-card.met .stamp{display:block}
+.animal-card.met .emoji{transform:scale(1.08) rotate(-4deg)}
+.animal-card:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.animal-goal{text-align:center;background:#fff;border:2.5px dashed #E8B96F;border-radius:24px;padding:16px 10px 14px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.animal-goal::after{content:"🐾";position:absolute;bottom:7px;left:10px;font-size:14px;opacity:.22;transform:rotate(-18deg)}
+@media(prefers-reduced-motion:reduce){.animal-card,.animal-card .emoji{transition:none}.animal-card.met .emoji{transform:none}}
 .popup b{font-size:14px}
 .popup p{margin:4px 0;font-size:12px}
 @media(max-width:640px){
@@ -181,6 +217,7 @@ a{color:var(--teal)}
   <a href="#packing">🎒 持ち物</a>
   <a href="#entry">🛂 入国</a>
   <a href="#someday">🌏 行きたいリスト</a>
+  <a href="#animals">🦘 たつやの動物リスト</a>
 </nav>
 
 <main class="wrap">
@@ -464,30 +501,78 @@ a{color:var(--teal)}
       </div>
     </div>
 
-    <!-- たくちゃん -->
-    <div style="display:flex;align-items:center;gap:10px;margin:22px 0 10px">
-      <div style="width:40px;height:40px;border-radius:50%;background:#D9F2D0;border:2px solid #111;display:grid;place-items:center;font-weight:900;flex:0 0 auto">た</div>
-      <b style="font-size:17px">たくちゃん（あんどぅー） の行きたいところ</b>
+    <!-- たつや -->
+    <div style="display:flex;align-items:center;gap:10px;margin:22px 0 10px;flex-wrap:wrap">
+      <div style="width:40px;height:40px;border-radius:50%;background:#FFD400;border:2px solid #111;display:grid;place-items:center;font-weight:900;flex:0 0 auto">た</div>
+      <b style="font-size:17px">たつや（星野くん） の行きたいところ 🐾</b>
+      <span style="background:#FFE8EE;border:1.5px solid #F2A9BC;color:#9D2C4E;font-size:11px;font-weight:900;padding:4px 9px;border-radius:999px">🦘 動物いっぱいゾーン</span>
       <span style="background:#FFF6C5;border:1.5px solid #D9B800;color:#7A5C00;font-size:11px;font-weight:900;padding:4px 9px;border-radius:999px">11/24の寄り道候補</span>
     </div>
-    <div class="card" style="padding:0;overflow:hidden">
-      <div style="background:linear-gradient(135deg,#14532D,#0E7C7B 60%,#1B4332);color:#fff;padding:18px">
+    <div class="card tatsuya-card" style="padding:0;overflow:hidden">
+      <div style="background:linear-gradient(135deg,#E6F7EE,#FFF6C5);color:#21312A;padding:20px">
         <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start">
           <b style="font-size:19px;line-height:1.3">🦎 オーストラリアン・レプタイル・パーク</b>
-          <span style="background:#FFD400;color:#111;font-size:12px;font-weight:900;padding:5px 10px;border-radius:999px;border:2px solid #111">✨ たっちゃんの行きたいところ</span>
+          <span class="badge-paw" style="font-size:12px;font-weight:900;padding:5px 10px;border-radius:999px">🐾 たつやの行きたいところ</span>
         </div>
-        <p style="margin:8px 0 0;font-size:14px;color:#D9F2E4">セントラルコースト（ゴスフォード近郊）の野生動物公園。爬虫類が中心で、カンガルーが園内を自由に歩き回ってます。ショーや体験型の展示もあり。</p>
+        <p style="margin:8px 0 0;font-size:14px;color:#33523F">セントラルコースト（ゴスフォード近郊）の野生動物公園。爬虫類が中心で、カンガルーが園内を自由に歩き回ってます。ショーや体験型の展示もあり。</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
           <span style="background:rgba(255,255,255,.94);color:#111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">📍 Pacific Highway, Somersby NSW 2250</span>
           <span style="background:rgba(255,255,255,.94);color:#111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">🕘 毎日 9:00〜17:00</span>
           <span style="background:rgba(255,255,255,.94);color:#111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">⭐ 4.6（クチコミ8,259件）</span>
         </div>
-        <p style="margin:10px 0 0;font-size:13px;color:#BFE8D2">ゴスフォード近郊だから、試合の日（11/24）の寄り道候補にもなり得る場所。「おすすめスポット＆マップ」にもピンを追加してます。</p>
+        <p style="margin:10px 0 0;font-size:13px;color:#4A6B57">ゴスフォード近郊だから、試合の日（11/24）の寄り道候補にもなり得る場所。「おすすめスポット＆マップ」にもピンを追加してます。</p>
         <a class="btn yellow" style="margin-top:12px" href="https://maps.app.goo.gl/LP5kkwRK4zMaeacX9?g_st=ic" target="_blank" rel="noopener">Googleマップで開く →</a>
       </div>
     </div>
+    <div class="paw-trail" aria-hidden="true"><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span></div>
+    <div class="card tatsuya-card walkabout" style="padding:0;overflow:hidden;margin-top:6px">
+      <div style="background:linear-gradient(135deg,#FFF1DC,#EAF6FF);color:#2E2A24;padding:20px">
+        <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start">
+          <b style="font-size:19px;line-height:1.3">🦘 ウォークアバウト・ワイルドライフ自然保護区</b>
+          <span class="badge-paw" style="font-size:12px;font-weight:900;padding:5px 10px;border-radius:999px">🐾 たつやの行きたいところ</span>
+        </div>
+        <p style="margin:8px 0 0;font-size:14px;color:#4A4238">セントラルコースト（カルガ）の野生動物公園。カンガルーやエミューが保護区内を自由に歩き回っていて、動物に間近で触れ合えます。レプタイルパークの近所です。</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <span style="background:rgba(255,255,255,.94);color:#111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">📍 1 Darkinjung Rd, Calga NSW 2250</span>
+          <span style="background:rgba(255,255,255,.94);color:#111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">🕘 毎日 9:00〜17:00</span>
+          <span style="background:rgba(255,255,255,.94);color:#111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">⭐ 4.5（クチコミ1,101件）</span>
+        </div>
+        <p style="margin:10px 0 0;font-size:13px;color:#6B5B45">レプタイルパークと近所同士だから、試合の日（11/24）にセントラルコーストへ行くならセットで寄る候補にもなります。「おすすめスポット＆マップ」にもピンがあります。会いたい動物は下の「たつやの行きたい動物リスト」でチェック！</p>
+        <a class="btn yellow" style="margin-top:12px" href="https://maps.app.goo.gl/V6CTkrvjF4eEDbus7?g_st=ic" target="_blank" rel="noopener">Googleマップで開く →</a>
+      </div>
+    </div>
+    <div class="paw-trail" aria-hidden="true"><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span></div>
 
     <p style="font-size:13px;color:var(--muted);margin:12px 2px 0">💡 ほかのメンバーの「行きたいところ」も、名前の見出しごとにここへどんどん足していこう。</p>
+  </section>
+
+  <!-- Tatsuya's Animals -->
+  <section class="section" id="animals">
+    <div class="section-head"><div class="num" style="background:#FFD9A8">8</div><div><h2>たつやの行きたい動物リスト 🐾</h2><p>レプタイルパークとウォークアバウトで会える動物たち 🐾 会えたらカードをタップして「会えた！」スタンプを押してね</p></div></div>
+    <div class="card animals-card">
+      <div class="paw-trail" aria-hidden="true" style="padding-top:0"><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px">
+        <b id="animalCount">0 / 7 会えた！</b>
+        <button class="btn light" id="resetAnimals" type="button" style="min-height:38px;padding:6px 12px;border-radius:999px">↩️ リセット</button>
+      </div>
+      <div class="progress" style="margin-top:10px"><i id="animalBar"></i></div>
+      <div class="animals" style="margin-top:14px">
+        <button type="button" class="animal-card" aria-pressed="false"><span class="emoji">🦘</span><b>カンガルー</b><small>園内を自由に歩き回る人気者。両方のスポットで会えるよ</small><span class="stamp">会えた！ 🎉</span></button>
+        <button type="button" class="animal-card" aria-pressed="false"><span class="emoji">🐦</span><b>エミュー</b><small>ウォークアバウトで自由にお散歩中。背が高くて存在感バツグン</small><span class="stamp">会えた！ 🎉</span></button>
+        <button type="button" class="animal-card" aria-pressed="false"><span class="emoji">🐨</span><b>コアラ</b><small>オーストラリアといえば！木の上でお昼寝してるかも</small><span class="stamp">会えた！ 🎉</span></button>
+        <button type="button" class="animal-card" aria-pressed="false"><span class="emoji">🐾</span><b>ウォンバット</b><small>ずんぐり丸くてかわいい。地面を掘るのが得意な子</small><span class="stamp">会えた！ 🎉</span></button>
+        <button type="button" class="animal-card" aria-pressed="false"><span class="emoji">🦙</span><b>アルパカ</b><small>もふもふ担当。近づいてくるかは当日の気分しだい</small><span class="stamp">会えた！ 🎉</span></button>
+        <button type="button" class="animal-card" aria-pressed="false"><span class="emoji">👀</span><b>ミーアキャット</b><small>立ち上がってキョロキョロ見張り番をする姿が名物</small><span class="stamp">会えた！ 🎉</span></button>
+        <button type="button" class="animal-card" aria-pressed="false"><span class="emoji">🦎</span><b>爬虫類いろいろ</b><small>ヘビ・トカゲなど。レプタイルパークの主役級の面々</small><span class="stamp">会えた！ 🎉</span></button>
+        <div class="animal-goal">
+          <span style="font-size:36px;line-height:1;width:64px;height:64px;margin:0 auto;display:flex;align-items:center;justify-content:center;background:#FFF6C5;border-radius:50%;border:2px solid rgba(17,17,17,.08);box-shadow:0 3px 0 rgba(17,17,17,.08)">🏆</span>
+          <b style="font-size:15px;display:block;margin-top:8px;line-height:1.3">コンプリート目標</b>
+          <small style="color:#5B6470;font-size:11px;line-height:1.45;display:block;margin-top:4px">7種類ぜんぶ会えたら<br>たつやミッション達成！</small>
+        </div>
+      </div>
+      <div class="paw-trail" aria-hidden="true"><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span></div>
+      <p style="font-size:12px;color:var(--muted);margin:8px 0 0">※ スタンプはこのページを開いている間だけの記録です。写真も撮って、みんなで数えよう 📸</p>
+    </div>
   </section>
 
 </main>
@@ -537,7 +622,8 @@ var spots=[
  {name:"The Meat & Wine Co Circular Quay ★予約済み",cat:"レストラン 11/26 18:00",group:"food",lat:-33.86488,lon:151.21050,addr:"2 O'Connell St, Sydney NSW 2000",desc:"11/26（木）18:00・5名で予約済み。最終夜のステーキ。",url:"https://maps.app.goo.gl/5a6iSdCySULQhBWz9"},
  {name:"ペリカンフィーディング（The Entrance）※たつや（星野くん）リクエスト",cat:"たつや（星野くん）リクエスト 🦩 観光",group:"sight",lat:-33.34470,lon:151.50114,addr:"Pelican Plaza（Memorial Park前）, Marine Parade, The Entrance NSW 2261",desc:"たつや（星野くん）リクエスト！湖と海がつながるウォーターフロントで、野生のペリカンがたくさん集まる昔からの名物スポット。スタジアム（ゴスフォード）からは車で約30分。試合の日（11/24）の昼〜午後に寄ってからスタジアムへ行く候補です。<br><b>⚠️ 大事な注意：</b>名物の解説トーク「Pelican Time」は現在、水・土・日と祝日・スクールホリデーのみ15:30開催。試合の日（11/24火曜）は開催がないので、トークは見られません。ただしペリカン自体は普段からウォーターフロント周辺に集まっていることが多いです。<br>参考：<a href='https://tora-tora.net/weblog/info/pelicanfeeding' target='_blank' rel='noopener'>たつや（星野くん）が送ってくれたブログ（トラトラ）</a>",url:"https://www.google.com/maps/search/?api=1&query=Pelican+Plaza+The+Entrance+NSW+2261"},
  {name:"マンリービーチ＆シェリービーチ（Manly / Shelly Beach）",cat:"観光候補 🏖️ ビーチ",group:"sight",lat:-33.79950,lon:151.29750,addr:"Shelly Beach, Manly NSW 2095（マンリービーチから徒歩約15分）",desc:"<b>観光候補</b>（確定ではありません）。サーキュラーキーからフェリーで約20〜30分のビーチエリア。マンリービーチは広い砂浜とサーフスポットで有名で、そこから遊歩道を歩いた先にあるシェリービーチは、波が穏やかでシュノーケリング向きの小さな入り江です。海沿いの散歩だけでも気持ちいいエリア。<br><b>🌊 この時期の海は寒い？</b> 11月下旬の水温は約20〜21℃。日本の真夏の海より冷ためで、短時間なら入れるけど、長く泳ぐ・シュノーケリングするならウェットスーツがあると安心です。",url:"https://www.google.com/maps/search/?api=1&query=Shelly+Beach+Manly+NSW"},
- {name:"オーストラリアン・レプタイル・パーク（Australian Reptile Park）※たっちゃん（あんどぅー）リクエスト",cat:"観光候補 🦎 たっちゃん（あんどぅー）リクエスト",group:"sight",lat:-33.41850,lon:151.27800,addr:"Pacific Highway, Somersby NSW 2250（セントラルコースト／ゴスフォード近郊）",desc:"<b>たっちゃん（あんどぅー）の行きたいところ！</b> セントラルコーストの野生動物公園。爬虫類が中心で、カンガルーが園内を自由に歩き回っていて、ショーや体験型の展示もあります。<br>🕘 毎日 9:00〜17:00 ／ ⭐ 評価4.6（クチコミ8,259件）<br>⚽ ゴスフォード近郊なので、試合の日（11/24）の寄り道候補にもなり得る場所です。",url:"https://maps.app.goo.gl/LP5kkwRK4zMaeacX9?g_st=ic"}
+ {name:"オーストラリアン・レプタイル・パーク（Australian Reptile Park）※たつや（星野くん）リクエスト",cat:"観光候補 🦎 たつや（星野くん）リクエスト",group:"sight",lat:-33.41850,lon:151.27800,addr:"Pacific Highway, Somersby NSW 2250（セントラルコースト／ゴスフォード近郊）",desc:"<b>たつや（星野くん）の行きたいところ！</b> セントラルコーストの野生動物公園。爬虫類が中心で、カンガルーが園内を自由に歩き回っていて、ショーや体験型の展示もあります。<br>🕘 毎日 9:00〜17:00 ／ ⭐ 評価4.6（クチコミ8,259件）<br>⚽ ゴスフォード近郊なので、試合の日（11/24）の寄り道候補にもなり得る場所です。",url:"https://maps.app.goo.gl/LP5kkwRK4zMaeacX9?g_st=ic"},
+ {name:"ウォークアバウト・ワイルドライフ自然保護区（Walkabout Wildlife Sanctuary）※たつや（星野くん）リクエスト",cat:"観光候補 🦘 たつや（星野くん）リクエスト",group:"sight",lat:-33.4237,lon:151.2234,addr:"1 Darkinjung Rd, Calga NSW 2250（セントラルコースト／レプタイルパークの近所）",desc:"<b>たつや（星野くん）の行きたいところ！</b> 野生動物保護区。カンガルーやエミューが保護区内を自由に歩き回り、動物に間近で触れ合えます。<br>🕘 毎日 9:00〜17:00 ／ ⭐ 評価4.5（クチコミ1,101件）<br>🦎 レプタイルパークの近所なので、試合の日（11/24）にセントラルコーストへ行くならセットで寄る候補にもなります。",url:"https://maps.app.goo.gl/V6CTkrvjF4eEDbus7?g_st=ic"}
 ];
 var spotList=document.getElementById('spotList');
 function renderSpots(filter){
@@ -607,6 +693,29 @@ items.forEach(function(it){
 });
 updateProgress();
 document.getElementById('resetCheck').addEventListener('click',function(){ saved={}; try{localStorage.removeItem(KEY);}catch(e){} document.querySelectorAll('#checklist input').forEach(function(c){c.checked=false; c.closest('.check-item').classList.remove('done')}); updateProgress(); });
+// Tatsuya's animals — tap to stamp "met!" (in-memory only, not saved)
+(function(){
+  var cards=document.querySelectorAll('.animal-card');
+  var countEl=document.getElementById('animalCount');
+  var barEl=document.getElementById('animalBar');
+  if(!cards.length || !countEl) return;
+  function updateAnimals(){
+    var met=0;
+    cards.forEach(function(c){ if(c.classList.contains('met')) met++; });
+    countEl.textContent=met+' / '+cards.length+' 会えた！'+(met===cards.length?' 🎉 コンプリート！':'');
+    if(barEl) barEl.style.width=(met/cards.length*100)+'%';
+  }
+  cards.forEach(function(c){
+    c.addEventListener('click',function(){
+      c.classList.toggle('met');
+      c.setAttribute('aria-pressed', c.classList.contains('met') ? 'true' : 'false');
+      updateAnimals();
+    });
+  });
+  var resetBtn=document.getElementById('resetAnimals');
+  if(resetBtn){ resetBtn.addEventListener('click',function(){ cards.forEach(function(c){ c.classList.remove('met'); c.setAttribute('aria-pressed','false'); }); updateAnimals(); }); }
+  updateAnimals();
+})();
 // Copy helpers
 function copyText(text,msgEl){
   function done(){ msgEl.textContent='コピーしました！'; setTimeout(function(){msgEl.textContent=''},2500); }
