@@ -90,6 +90,7 @@ a{color:var(--teal)}
 .vs b{font-size:14px;line-height:1.3;display:block}
 /* weather */
 .weather{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.weather6{grid-template-columns:repeat(6,1fr)}
 .wday{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:10px 6px;text-align:center}
 .wday b{font-size:12px}
 .wday .icon{font-size:22px;line-height:1.2}
@@ -179,6 +180,8 @@ a{color:var(--teal)}
   .member .avatar{width:36px;height:36px;font-size:13px}
   .member b{font-size:11px}
   .weather{grid-template-columns:repeat(5,1fr);gap:5px}
+  .weather6{grid-template-columns:repeat(3,1fr);gap:6px}
+  .weather6 .temp{font-size:13px}
   .wday .temp{font-size:12px}
   .timeline td.time{width:86px;font-size:13px}
   .countdown{flex-direction:column;align-items:flex-start}
@@ -291,15 +294,16 @@ a{color:var(--teal)}
 
     <!-- Weather -->
     <div style="margin-top:16px">
-      <h3 style="margin:0 0 8px;font-size:16px">🌤️ 天気と服装（2026/11/17時点の予報）</h3>
-      <div class="weather">
-        <div class="wday"><b>11/23 月</b><div class="icon">⛈️</div><div class="temp">29° / 19°</div><small>雷雨・降水70%<br>UV 8<br>傘＋防水の靴</small></div>
-        <div class="wday"><b>11/24 火</b><div class="icon">🌤️</div><div class="temp">24° / 17°</div><small>晴れ時々曇り<br>UV 11 非常に強い<br>夜は羽織り厚め</small></div>
-        <div class="wday"><b>11/25 水</b><div class="icon">☁️</div><div class="temp">22° / 18°</div><small>曇り<br>BBQの夜は羽織りを</small></div>
-        <div class="wday"><b>11/26 木</b><div class="icon">🌤️</div><div class="temp">24° / 18°</div><small>晴れ時々曇り</small></div>
-        <div class="wday"><b>11/27 金</b><div class="icon">🌤️</div><div class="temp">24° / 18°</div><small>前後</small></div>
+      <h3 style="margin:0 0 8px;font-size:16px">🌤️ 天気と服装（2026/11/20時点の予報・weather.com）</h3>
+      <div class="weather weather6">
+        <div class="wday"><b>11/22 日</b><div class="icon">🌤️</div><div class="temp">31° / 23°</div><small>晴れ時々曇り・風強め<br>降水20%<br>UV 9 非常に強い<br>帽子は飛ばない工夫＋日焼け止め強めに</small></div>
+        <div class="wday"><b>11/23 月</b><div class="icon">⛈️</div><div class="temp">30° / 19°</div><small>午後に雷雨・降水60%<br>夜も雷雨70%<br>UV 7 強い<br>折りたたみ傘＋防水の靴</small></div>
+        <div class="wday"><b>11/24 火 ⚽</b><div class="icon">🌦️</div><div class="temp">22° / 18°</div><small>午後にわか雨 30%<br>夜は曇り・降水20%<br>UV 10 非常に強い<br>雨対策＋UV対策の両方</small></div>
+        <div class="wday"><b>11/25 水</b><div class="icon">☁️</div><div class="temp">22° / 19°</div><small>曇りがち・降水10%<br>UV 8 非常に強い<br>BBQの夜は羽織りを</small></div>
+        <div class="wday"><b>11/26 木</b><div class="icon">🌧️</div><div class="temp">25° / 19°</div><small>にわか雨・降水50%<br>夜は雨 70%・やや強め<br>UV 7 強い<br>夕食の行き帰りは傘を</small></div>
+        <div class="wday"><b>11/27 金</b><div class="icon">🌧️</div><div class="temp">25° / 20°</div><small>にわか雨・降水70%<br>UV 9 非常に強い<br>空港移動も雨対策を</small></div>
       </div>
-      <p style="font-size:13px;color:#444;margin:8px 2px 0">服装の目安：初夏。日中は半袖、朝晩は薄手の羽織り必須。日焼け止め・帽子・サングラスを忘れずに。予報は変わるので出発前に再確認を。</p>
+      <p style="font-size:13px;color:#444;margin:8px 2px 0">服装の目安：初夏。日中は半袖、朝晩は薄手の羽織り必須。日焼け止め・帽子・サングラスを忘れずに。<b>11/22は31℃と暑く風も強いので、帽子が飛ばない工夫と日焼け止めを強めに。11/23は午後に雷雨（夜70%）なので折りたたみ傘と防水の靴で。11/24の試合の日は、昼のUV対策（日焼け止め・帽子）に加えて、午後にわか雨30%に備えて折りたたみ傘も持っていこう（夜は曇り・降水20%まで下がりました）。11/26は夜に雨70%とやや強めなので、ステーキの夕食への行き帰りは傘を忘れずに。11/27の帰国日もにわか雨70%なので、空港への移動は雨対策を。</b>予報は変わるので出発前に再確認を。</p>
     </div>
   </section>
 
@@ -324,7 +328,7 @@ a{color:var(--teal)}
           <div>🏟️ <b>セントラルコースト・スタジアム</b>（Polytec Stadium）／ ゴスフォード</div>
           <div>🚃 電車：Central駅 → Gosford駅 約1時間20分 ＋ 徒歩約11分</div>
           <div>🚕 タクシー：宿（Millers Point）からスタジアム前まで直接 約1時間〜1時間20分（約80km・M1経由）。片道目安 A$200〜260（Uberは目安 A$140前後〜・変動あり）。乗り換えなしで楽な分、電車より割高。5人なので通常タクシーには乗れず<b>マキシタクシー／Uber XL必須</b> — 行くなら事前予約を。帰りも約1時間で宿まで戻れます</div>
-          <div>🌙 試合後はシドニーへ、電車で23:00ごろ帰着予定。夜は冷えるので羽織りを厚めに！</div>
+          <div>🌙 試合後はシドニーへ、電車で23:00ごろ帰着予定。11/24は午後にわか雨の可能性（降水30%）があるので、折りたたみ傘を持参を（夜は曇り・降水20%まで下がりました）。昼はUV指数10と非常に強いので日焼け止め・帽子も忘れずに。夜は冷えるので羽織りを厚めに！</div>
           <div>📺 日本では DAZN 独占配信</div>
         </div>
         <a href="#packing" class="btn yellow" style="margin-top:14px;width:100%">🎒 観戦グッズをチェックリストで確認</a>
@@ -407,7 +411,7 @@ a{color:var(--teal)}
     <div class="section-head"><div class="num">5</div><div><h2>持ち物チェックリスト</h2><p>タップでチェック。進捗はこの端末に保存されます</p></div></div>
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><b id="progressText">0 / 17 完了</b><button class="btn light" id="resetCheck" style="min-height:38px;padding:6px 12px">リセット</button></div>
-      <p style="font-size:13px;font-weight:700;background:var(--yellow-pale);border:1px solid #EDE8D6;border-radius:10px;padding:8px 10px;margin:10px 0 0">💱 1オーストラリアドル＝約108円（2026年11月17日時点）</p>
+      <p style="font-size:13px;font-weight:700;background:var(--yellow-pale);border:1px solid #EDE8D6;border-radius:10px;padding:8px 10px;margin:10px 0 0">💱 1オーストラリアドル＝約106円（2026年11月20日時点）</p>
       <div class="progress" style="margin-top:8px"><i id="progressBar"></i></div>
       <div class="checklist" id="checklist"></div>
       <p style="font-size:12px;color:var(--muted);margin:10px 0 0">※ チェックはこのスマホ／ブラウザにだけ保存されます。みんなで共有されるものではありません。</p>
@@ -577,7 +581,7 @@ a{color:var(--teal)}
   </section>
 
 </main>
-<footer class="footer">レイソル旅inシドニー — 2026.11.22〜27 ／ たつや（星野くん）・ともーみ（ともちゃん）・ももこ・たくちゃん（あんどぅー）・めぐみ<br>天気は2026/11/17時点の予報です。出発前に最新情報を確認してください。</footer>
+<footer class="footer">レイソル旅inシドニー — 2026.11.22〜27 ／ たつや（星野くん）・ともーみ（ともちゃん）・ももこ・たくちゃん（あんどぅー）・めぐみ<br>天気は2026/11/20時点の予報（weather.com）です。出発前に最新情報を確認してください。</footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
