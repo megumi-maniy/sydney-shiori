@@ -155,6 +155,11 @@ a{color:var(--teal)}
 .flow li b{font-weight:900}
 .guide-sources{font-size:11.5px;color:var(--muted);margin:12px 0 0;line-height:1.6}
 .guide-sources a{color:var(--teal);font-weight:700}
+/* check-in card */
+.checkin-card{background:#111;color:#fff;border-radius:20px;padding:18px;border:3px solid var(--yellow)}
+.checkin-steps{margin:10px 0 0;padding-left:20px}
+.checkin-steps li{margin:7px 0;font-size:14px}
+.line-note{background:#222;border:1.5px dashed var(--yellow);border-radius:14px;padding:12px 14px;margin-top:12px;font-size:14px}
 .footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 16px 36px}
 /* tatsuya — cute zone (only Tatsuya's lists) */
 .tatsuya-card{border:3px solid #9ADBB5;border-radius:28px;box-shadow:0 6px 0 #DFF5E6}
@@ -233,7 +238,8 @@ a{color:var(--teal)}
 </div>
 
 <nav class="quicknav" aria-label="ページ内メニュー">
-  <a href="#schedule" class="yellow">📅 スケジュール</a>
+  <a href="#checkin" class="yellow">🔑 チェックイン</a>
+  <a href="#schedule">📅 スケジュール</a>
   <a href="#soccer">⚽ サッカー</a>
   <a href="#spots">📍 スポット＆マップ</a>
   <a href="#stay">🏠 宿・移動</a>
@@ -244,6 +250,42 @@ a{color:var(--teal)}
 </nav>
 
 <main class="wrap">
+
+  <!-- Check-in & Wi-Fi (host info from Susanna / Property Host) -->
+  <section class="section" id="checkin" style="margin-top:20px">
+    <div class="checkin-card">
+      <div class="maru" style="font-weight:900;font-size:20px">🔑 チェックイン＆Wi-Fi</div>
+      <p style="font-size:13px;color:#D1D5DB;margin:6px 0 0">ホストのスザンナさん（Property Host）からの案内です。到着したら、まずここを見ながらセルフチェックインを。</p>
+      <ol class="checkin-steps">
+        <li><b>住所：24 Merriman Street, Millers Point</b> — キーボックスは玄関ドアにかかっています</li>
+        <li>暗証番号を合わせ、<b>番号の左側にある黒いレバー</b>を下に引くと、キーボックスの灰色の部分が前方に開いて鍵が取り出せます</li>
+        <li>チェックインは <b>15:00から</b>。無事に入室できたら、ホストへ到着の連絡をしてください</li>
+        <li>鍵は<b>キーボックスに入れておくのがおすすめ</b>（いつでも家に入れて、紛失も防げます）。チェックアウト時も鍵はロックボックスに戻してください</li>
+      </ol>
+      <a class="btn yellow" href="https://youtube.com/shorts/4m2JuvOUChw?si=RHiT9O_xcLmoyXp5" target="_blank" rel="noopener" style="margin-top:12px;width:100%">🎥 ロックボックスの開け方（動画）を見る</a>
+      <div style="background:#222;border:2px dashed var(--yellow);border-radius:14px;padding:14px;margin-top:12px;text-align:center">
+        <div style="font-size:12px;font-weight:900;letter-spacing:.1em;color:#D1D5DB">🔑 キーボックスの暗証番号</div>
+        <div class="maru" style="font-size:40px;font-weight:900;letter-spacing:.2em;color:var(--yellow);line-height:1.25">2-0-0-2</div>
+      </div>
+      <div style="background:#222;border:1.5px solid #444;border-radius:14px;padding:12px 14px;margin-top:10px">
+        <div style="font-size:12px;font-weight:900;letter-spacing:.08em;color:#D1D5DB">📶 Wi-Fi</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;flex-wrap:wrap">
+          <div style="font-size:13px;color:#D1D5DB">ネットワーク名<br><b style="font-size:17px;color:#fff">WiFi-H95NE</b></div>
+          <button class="btn yellow" id="copyWifiName">📋 コピー</button>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <div style="font-size:13px;color:#D1D5DB">パスワード<br><b style="font-size:17px;color:#fff">Spiny922Pick</b></div>
+          <button class="btn yellow" id="copyWifiPass">📋 コピー</button>
+        </div>
+        <p id="copyWifiMsg" style="font-size:12px;color:var(--yellow);font-weight:700;margin:8px 0 0"></p>
+      </div>
+      <ul class="note-list" style="margin-top:12px">
+        <li>🚿 <b>お湯：</b>シャワーでお湯を出すには、給湯スイッチがONになっているか確認を。パネルは<b>奥の居間の右側の壁</b>にあります</li>
+        <li>🗑️ <b>ゴミ：</b>月曜日に大きなゴミ箱を道路の縁石まで出してください</li>
+        <li>🏠 <b>ホスト：</b>スザンナさん（Property Host）／ <a href="https://propertyhost.com.au" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">propertyhost.com.au</a>／ 現地連絡先 +61 427 771 721</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- Members + Flights -->
   <section class="section">
@@ -366,7 +408,7 @@ a{color:var(--teal)}
       <tr><td class="time">11:30〜</td><td>宿に荷物預けOK <span class="pill teal">玄関リビング</span></td></tr>
       <tr><td class="time">15:00</td><td>チェックイン可能</td></tr>
       <tr><td class="time">19:00-21:00</td><td>めぐみ 友達とご飯</td></tr>
-      <tr><td class="time">20:15</td><td><b>他4名 シドニー着</b>（NH889）<br><span style="color:#555">入国カードは機内で記入済みのはず（上のガイド参照）。空港→宿は電車 or タクシー（下記参照）／ロックボックスのコードはめぐみがLINEで送ります</span></td></tr>
+      <tr><td class="time">20:15</td><td><b>他4名 シドニー着</b>（NH889）<br><span style="color:#555">入国カードは機内で記入済みのはず（上のガイド参照）。空港→宿は電車 or タクシー（下記参照）／ロックボックスの暗証番号は <b>2-0-0-2</b>（上の「🔑 チェックイン＆Wi-Fi」カード参照）</span></td></tr>
       </table>
     </div>
     <div class="daypanel" id="d24">
@@ -472,8 +514,7 @@ a{color:var(--teal)}
         <ul class="note-list">
           <li>チェックイン 15:00以降 ／ チェックアウト 10:00前（セルフチェックイン）</li>
           <li>荷物は <b>11:30から</b> 玄関リビングに預けOK</li>
-          <li>ロックボックスのコードは到着日の朝に届き、<b>めぐみがLINEでみんなに送ります</b></li>
-          <li>入室できたらホストへ連絡を。チェックアウト時は鍵をロックボックスへ</li>
+          <li>ロックボックスの暗証番号は <b>2-0-0-2</b> です。開け方の手順とWi-Fi情報はページ上部の「🔑 チェックイン＆Wi-Fi」カードへ</li>
           <li>現地連絡先：Property Host <b>+61 427 771 721</b></li>
         </ul>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
@@ -843,6 +884,8 @@ function copyText(text,msgEl){
 }
 document.getElementById('copyAddr').addEventListener('click',function(){ copyText('24 Merriman Street, Millers Point, NSW 2000, Australia', document.getElementById('copyMsg')); });
 document.getElementById('copyEntry').addEventListener('click',function(){ copyText('24 Merriman Street, Millers Point, NSW 2000', document.getElementById('copyEntryMsg')); });
+document.getElementById('copyWifiName').addEventListener('click',function(){ copyText('WiFi-H95NE', document.getElementById('copyWifiMsg')); });
+document.getElementById('copyWifiPass').addEventListener('click',function(){ copyText('Spiny922Pick', document.getElementById('copyWifiMsg')); });
 </script>
 </body>
 </html>
