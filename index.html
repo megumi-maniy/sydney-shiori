@@ -161,6 +161,18 @@ a{color:var(--teal)}
 .checkin-steps li{margin:7px 0;font-size:14px}
 .line-note{background:#222;border:1.5px dashed var(--yellow);border-radius:14px;padding:12px 14px;margin-top:12px;font-size:14px}
 .footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 16px 36px}
+/* breakfast menu */
+.menu-item{display:flex;gap:10px;padding:11px 0;border-top:1px solid #F3EED6}
+.menu-item:first-of-type{border-top:none;padding-top:2px}
+.menu-code{flex:0 0 auto;background:#111;color:var(--yellow);font-weight:900;font-size:12px;padding:4px 7px;border-radius:8px;height:fit-content;min-width:40px;text-align:center;margin-top:2px}
+.menu-body{flex:1;min-width:0}
+.menu-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.menu-head b{font-size:14.5px;line-height:1.35}
+.menu-price{font-weight:900;font-size:14.5px;white-space:nowrap;color:#111}
+.menu-desc{font-size:13px;color:#555;margin:3px 0 0;line-height:1.55}
+.sides-box{background:var(--yellow-pale);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;margin-top:14px}
+.sides-box b{font-size:14px}
+.sides-box p{font-size:13.5px;margin:6px 0 0;line-height:1.7}
 /* tatsuya — cute zone (only Tatsuya's lists) */
 .tatsuya-card{border:3px solid #9ADBB5;border-radius:28px;box-shadow:0 6px 0 #DFF5E6}
 .tatsuya-card.walkabout{border-color:#FFC98A;box-shadow:0 6px 0 #FFEDD3}
@@ -240,6 +252,8 @@ a{color:var(--teal)}
 <nav class="quicknav" aria-label="ページ内メニュー">
   <a href="#checkin" class="yellow">🔑 チェックイン</a>
   <a href="#schedule">📅 スケジュール</a>
+  <a href="#breakfast">🍳 朝ごはん</a>
+  <a href="#obsessive">☕ Obsessive</a>
   <a href="#soccer">⚽ サッカー</a>
   <a href="#spots">📍 スポット＆マップ</a>
   <a href="#stay">🏠 宿・移動</a>
@@ -265,7 +279,7 @@ a{color:var(--teal)}
       <a class="btn yellow" href="https://youtube.com/shorts/4m2JuvOUChw?si=RHiT9O_xcLmoyXp5" target="_blank" rel="noopener" style="margin-top:12px;width:100%">🎥 ロックボックスの開け方（動画）を見る</a>
       <div style="background:#222;border:2px dashed var(--yellow);border-radius:14px;padding:14px;margin-top:12px;text-align:center">
         <div style="font-size:12px;font-weight:900;letter-spacing:.1em;color:#D1D5DB">🔑 キーボックスの暗証番号</div>
-        <div class="maru" style="font-size:40px;font-weight:900;letter-spacing:.2em;color:var(--yellow);line-height:1.25">2-0-0-2</div>
+        <div style="font-size:40px;font-weight:900;color:var(--yellow);letter-spacing:.18em;line-height:1.2;padding:6px 0 2px">2-0-0-2</div>
       </div>
       <div style="background:#222;border:1.5px solid #444;border-radius:14px;padding:12px 14px;margin-top:10px">
         <div style="font-size:12px;font-weight:900;letter-spacing:.08em;color:#D1D5DB">📶 Wi-Fi</div>
@@ -282,7 +296,7 @@ a{color:var(--teal)}
       <ul class="note-list" style="margin-top:12px">
         <li>🚿 <b>お湯：</b>シャワーでお湯を出すには、給湯スイッチがONになっているか確認を。パネルは<b>奥の居間の右側の壁</b>にあります</li>
         <li>🗑️ <b>ゴミ：</b>月曜日に大きなゴミ箱を道路の縁石まで出してください</li>
-        <li>🏠 <b>ホスト：</b>スザンナさん（Property Host）／ <a href="https://propertyhost.com.au" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">propertyhost.com.au</a>／ 現地連絡先 +61 427 771 721</li>
+        <li>🏠 <b>ホスト：</b>スザンナさん（Property Host）／ <a href="https://propertyhost.com.au" target="_blank" rel="noopener" style="color:var(--yellow);font-weight:700">propertyhost.com.au</a></li>
       </ul>
     </div>
   </section>
@@ -343,7 +357,7 @@ a{color:var(--teal)}
             <dt>Postcode</dt><dd>2000</dd>
             <dt>Flight</dt><dd>めぐみ NH879 ／ 他4名 NH889</dd>
             <dt>滞在日数</dt><dd>5日間</dd>
-            <dt>現地連絡先</dt><dd>+61 427 771 721（Property Host）</dd>
+            <dt>現地連絡先</dt><dd>ホスト（Property Host）📞 +61 427 771 721</dd>
           </dl>
           <button class="btn yellow" id="copyEntry" style="margin-top:12px;width:100%">📋 住所をコピーする</button>
           <p id="copyEntryMsg" style="font-size:12px;color:#FFD400;font-weight:700;margin:6px 0 0;text-align:center"></p>
@@ -408,11 +422,12 @@ a{color:var(--teal)}
       <tr><td class="time">11:30〜</td><td>宿に荷物預けOK <span class="pill teal">玄関リビング</span></td></tr>
       <tr><td class="time">15:00</td><td>チェックイン可能</td></tr>
       <tr><td class="time">19:00-21:00</td><td>めぐみ 友達とご飯</td></tr>
-      <tr><td class="time">20:15</td><td><b>他4名 シドニー着</b>（NH889）<br><span style="color:#555">入国カードは機内で記入済みのはず（上のガイド参照）。空港→宿は電車 or タクシー（下記参照）／ロックボックスの暗証番号は <b>2-0-0-2</b>（上の「🔑 チェックイン＆Wi-Fi」カード参照）</span></td></tr>
+      <tr><td class="time">20:15</td><td><b>他4名 シドニー着</b>（NH889）<br><span style="color:#555">入国カードは機内で記入済みのはず（上のガイド参照）。空港→宿は電車 or タクシー（下記参照）／ロックボックスの開け方は上の「🔑 チェックイン＆Wi-Fi」カード参照（暗証番号 2-0-0-2）</span></td></tr>
       </table>
     </div>
     <div class="daypanel" id="d24">
       <table class="timeline"><tr><th style="width:108px">時間</th><th>予定</th></tr>
+      <tr><td class="time">朝</td><td><b>🍳 朝ごはん — Brix &amp; Beans Coffee House</b><br><span style="color:#555">滞在先近くのカフェ（Shop 1/9 Towns Pl, Millers Point）。朝食メニューは<b>平日11:30まで</b>で、11/24（火）も対象。注文はカウンターで。メニューの日本語訳は下のセクションにまとめました。</span><br><a href="#breakfast" style="font-weight:700">→ 🍳 Brix &amp; Beans 朝食メニュー（日本語）を見る</a></td></tr>
       <tr><td class="time">昼〜午後</td><td><b>🦩 ペリカンフィーディング（The Entrance）</b> <span class="pill">たつや（星野くん）リクエスト・候補</span><br><span style="color:#555">Pelican Plaza（Memorial Park前、Marine Parade, The Entrance）でペリカンを見てからスタジアムへ行く案。湖と海がつながるウォーターフロントで、野生のペリカンがたくさん集まる昔からの名物スポット。<br>🚗 スタジアム（ゴスフォード）まで車で約30分なので、18:45キックオフに十分間に合う流れです。<br>⚠️ 11/24（火）は解説トーク「Pelican Time」（水・土・日・祝日・スクールホリデーのみ15:30開催）の開催日ではないので、トークは見られません。ただしペリカン自体は普段から周辺に集まっていることが多いです。</span><br><a href="#spots" style="font-weight:700">→ スポット＆マップで詳細を見る</a></td></tr>
       <tr><td class="time">夕方</td><td>ゴスフォードへ移動（2択）<br><span style="color:#555">※The Entrance経由の場合は、そこから車でスタジアムへ直接（約30分）<br>🚃 電車：Central駅から約1時間20分 ＋ Gosford駅から徒歩約11分<br>🚕 タクシー：宿からスタジアム前まで直接、約1時間〜1時間20分（約80km・M1経由）／ 片道目安 A$200〜260 ※5人はマキシタクシー必須、夕方の渋滞で前後します</span></td></tr>
       <tr><td class="time">18:45</td><td><b>⚽ サッカー観戦 — ACLE第5節</b><br>ニューカッスル・ジェッツ vs 柏レイソル<br><span style="color:#555">セントラルコースト・スタジアム（Polytec Stadium）／ Gosford駅から徒歩約11分 ／ チケット手配OK</span> <span class="pill">メイン行事</span></td></tr>
@@ -450,6 +465,104 @@ a{color:var(--teal)}
         <div class="wday"><b>11/27 金</b><div class="icon">🌧️</div><div class="temp">26° / 20°</div><small>にわか雨・降水60%<br>夜もにわか雨 50%<br>UV 9 非常に強い<br>空港移動も雨対策を</small></div>
       </div>
       <p style="font-size:13px;color:#444;margin:8px 2px 0">服装の目安：初夏。日中は半袖、朝晩は薄手の羽織り必須。日焼け止め・帽子・サングラスを忘れずに。<b>11/22は31℃と暑く風も強いので、帽子が飛ばない工夫と日焼け止めを強めに。11/23は31℃まで上がって午後に雷雨（降水50%、夜も雷雨40%）なので折りたたみ傘と防水の靴で。11/24の試合の日は前回予報より悪化：シドニーはにわか雨・降水50%で風も強め、ゴスフォードは夜のにわか雨60%です。折りたたみ傘だけでなく防風の羽織りを厚めに（夜18℃）。11/25は曇りがちで降水10%と落ち着く見込み。11/26は午前にわか雨40%、夜は雨50%なのでステーキの夕食への行き帰りは傘を忘れずに。11/27の帰国日もにわか雨60%なので、空港への移動は雨対策を。</b>予報は変わるので現地でも再確認を。</p>
+    </div>
+  </section>
+
+  <!-- Breakfast: Brix & Beans -->
+  <section class="section" id="breakfast">
+    <div class="section-head"><div class="num">🍳</div><div><h2>Brix &amp; Beans 朝食メニュー（日本語）</h2><p>明日の朝ごはん候補 — 滞在先近くのカフェのメニューを日本語にしました</p></div></div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start">
+        <div>
+          <b style="font-size:17px">☕ Brix &amp; Beans Coffee House</b>
+          <p style="font-size:13px;color:#444;margin:4px 0 0">Shop 1/9 Towns Pl, Millers Point NSW 2000 ／ 宿からすぐ近く<br>営業：月〜金 6:30〜16:00 ／ 土日 7:00〜14:00</p>
+        </div>
+        <span class="pill">★ 4.6</span>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <span style="background:var(--yellow);border:1.5px solid #111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">🍳 朝食は平日 11:30まで</span>
+        <span style="background:#fff;border:1.5px solid #111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">📝 注文はカウンターで</span>
+        <span style="background:#fff;border:1.5px solid #111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">💰 価格は AUD（A$）</span>
+        <span style="background:#E0F2F2;border:1.5px solid #BFE8E7;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">📅 11/24（火）は平日なので対象</span>
+      </div>
+      <p style="font-size:13px;color:#444;margin:12px 0 4px">注文するときは、左の番号（B1、B4…）を伝えるとスムーズです。写真の英語メニューを日本語訳した一覧です。</p>
+
+      <div class="menu-item"><span class="menu-code">B1</span><div class="menu-body"><div class="menu-head"><b>ザ・グラウンズ・ブレッド</b><span class="menu-price">$5.50</span></div><p class="menu-desc">パン（サワードウ／ミックスグレイン／ターキッシュ／レーズン／グルテンフリーから選択）に、バター・ベリージャム・ベジマイト・ピーナッツバターのいずれか</p></div></div>
+      <div class="menu-item"><span class="menu-code">B2</span><div class="menu-body"><div class="menu-head"><b>ブルックリンボーイズ・ベーグル</b><span class="menu-price">$6.50</span></div><p class="menu-desc">ベーグル（プレーン／セサミ／ミックスシード／ブルーベリー）＋クリームチーズ。サーモン・ケッパー・スペインオニオン追加 +$4</p></div></div>
+      <div class="menu-item"><span class="menu-code">B3</span><div class="menu-body"><div class="menu-head"><b>トースティー</b><span class="menu-price">$8.50</span></div><p class="menu-desc">ハム・チーズ・トマトのホットサンド（パン選択可）</p></div></div>
+      <div class="menu-item"><span class="menu-code">B4</span><div class="menu-body"><div class="menu-head"><b>アボカドトースト</b><span class="menu-price">$14.50</span></div><p class="menu-desc">つぶしたアボカド、ポーチドエッグ2個、フェンネル＆ビーツのレリッシュ、フェタチーズ、ザクロ、デュカ（スパイスナッツ）、バジルオイルをサワードウに</p></div></div>
+      <div class="menu-item"><span class="menu-code">B5</span><div class="menu-body"><div class="menu-head"><b>エッグ・オン・トースト</b><span class="menu-price">$12.50</span></div><p class="menu-desc">卵2個（ポーチド／スクランブル／目玉焼きから選択）をサワードウに。ベーコンかチョリソー追加 +$4</p></div></div>
+      <div class="menu-item"><span class="menu-code">B6</span><div class="menu-body"><div class="menu-head"><b>ハルーミ＆エッグバーガー</b><span class="menu-price">$10.00</span></div><p class="menu-desc">焼きハルーミチーズ、卵、ルッコラ、トマトレリッシュ、ブリオッシュバンズ</p></div></div>
+      <div class="menu-item"><span class="menu-code">B7</span><div class="menu-body"><div class="menu-head"><b>ベーコン＆エッグバーガー</b><span class="menu-price">$9.50</span></div><p class="menu-desc">ベーコン、卵、ブリオッシュバンズ、BBQソースかトマトソース</p></div></div>
+      <div class="menu-item"><span class="menu-code">B8</span><div class="menu-body"><div class="menu-head"><b>ブリックス＆ビーンズバーガー</b><span class="menu-price">$13.50</span></div><p class="menu-desc">ベーコン、卵、つぶしたアボカド、レタス、トマトレリッシュ、ハッシュブラウン、マヨネーズ、ブリオッシュバンズ</p></div></div>
+      <div class="menu-item"><span class="menu-code">B9</span><div class="menu-body"><div class="menu-head"><b>チーズ＆ほうれん草オムレツ</b><span class="menu-price">$14.50</span></div><p class="menu-desc">卵3個、ベビーほうれん草、モッツァレラチーズ、サワードウ付き</p></div></div>
+      <div class="menu-item"><span class="menu-code">B10</span><div class="menu-body"><div class="menu-head"><b>グラノーラ or アサイーボウル</b><span class="menu-price">$11.50</span></div><p class="menu-desc">ナッツグラノーラ、フルーツ＆ベリー、ココナッツフレーク、チアシード、ギリシャヨーグルト。ヨーグルトをアサイーミックスに変更 +$2</p></div></div>
+      <div class="menu-item"><span class="menu-code">B12</span><div class="menu-body"><div class="menu-head"><b>ラップ・イット</b><span class="menu-price">$13.50</span></div><p class="menu-desc">卵2個、チョリソー、モッツァレラ、ほうれん草のソテー、チポトレサルサを12インチのトルティーヤで巻いたもの<br><span style="color:var(--muted);font-size:12px">※ メニューにB11はありません</span></p></div></div>
+      <div class="menu-item"><span class="menu-code">B13</span><div class="menu-body"><div class="menu-head"><b>トリュフマッシュルーム</b><span class="menu-price">$16.50</span></div><p class="menu-desc">ミックスマッシュルーム、トリュフオイル、ラブネ（水切りヨーグルトチーズ）、クミンシードをサワードウに</p></div></div>
+      <div class="menu-item"><span class="menu-code">B14</span><div class="menu-body"><div class="menu-head"><b>ポテトロスティ</b><span class="menu-price">$15.50</span></div><p class="menu-desc">カリカリのポテトロスティ、ポーチドエッグ2個、アボカド、チェリートマト、ケールのソテー、スパイスナッツデュカ</p></div></div>
+      <div class="menu-item"><span class="menu-code">B15</span><div class="menu-body"><div class="menu-head"><b>クラシックワッフル</b><span class="menu-price">$14.50</span></div><p class="menu-desc">ワッフルにバニラアイス、ミックスベリー、ヌテラソース、キャラメルバナナ、メープルシロップ。ベーコン追加 +$4</p></div></div>
+
+      <div class="sides-box">
+        <b>🥄 サイドメニュー（追加トッピング）</b>
+        <p><b>$2</b> — ハッシュブラウン ／ 卵 ／ フェタチーズ<br>
+        <b>$3</b> — ローストトマト ／ ほうれん草 ／ アボカド ／ マッシュルーム ／ ハルーミ<br>
+        <b>$4</b> — ベーコン ／ チョリソー<br>
+        <b>$5</b> — スモークサーモン</p>
+      </div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+        <a class="btn" href="https://maps.app.goo.gl/5NM6PWx9KFB9tZrC7?g_st=ic" target="_blank" rel="noopener">Googleマップで開く →</a>
+        <a class="btn light" href="#spots">📍 スポット＆マップで見る</a>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin:10px 0 0">※ メニューと価格は写真撮影時点のものです。現地で変わっている場合があります。</p>
+    </div>
+  </section>
+
+  <!-- Obsessive Coffee Disorder -->
+  <section class="section" id="obsessive">
+    <div class="section-head"><div class="num">☕</div><div><h2>Obsessive Coffee メニュー（日本語）</h2><p>もう1軒の朝ごはん候補 — 宿近くのコーヒーショップのフードメニューを日本語にしました</p></div></div>
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start">
+        <div>
+          <b style="font-size:17px">☕ Obsessive Coffee Disorder</b>
+          <p style="font-size:13px;color:#444;margin:4px 0 0">8 Windmill Street, Millers Point NSW 2000 ／ 宿からすぐ近く<br>営業：月〜金 6:30〜15:00 ／ 土日はお休み</p>
+        </div>
+        <span class="pill">★ 4.5</span>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <span style="background:var(--yellow);border:1.5px solid #111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">🗓️ 平日のみ営業（土日休み）</span>
+        <span style="background:#E0F2F2;border:1.5px solid #BFE8E7;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">📅 11/24（火）は営業日</span>
+        <span style="background:#fff;border:1.5px solid #111;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900">💰 価格は AUD（A$）</span>
+      </div>
+      <p style="font-size:13px;color:#444;margin:12px 0 4px">写真の英語メニュー（フード）を日本語訳した一覧です。コーヒーが主役のお店で、フードも朝ごはんにぴったりです。</p>
+
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>バナナブレッド</b><span class="menu-price">$6</span></div></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>トースト</b><span class="menu-price">$6</span></div><p class="menu-desc">厚切りサワードウ＋お好みのスプレッド。フルーツトーストかグルテンフリーパンに変更 +$1</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>エッグ・オン・トースト</b><span class="menu-price">$12</span></div><p class="menu-desc">目玉焼き2個をサワードウに</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>アボ・トマトトースト</b><span class="menu-price">$14</span></div><p class="menu-desc">乳製品不使用／ヴィーガン対応。チリオイル追加 +$2、フェタ +$3、グルテンフリーパン +$1</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>BAEロール</b><span class="menu-price">$13</span></div><p class="menu-desc">カリカリベーコン、目玉焼き、ハッシュブラウン、チーズ、アイオリ、スモーキーBBQソース</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>アボ・エッグロール</b><span class="menu-price">$13</span></div><p class="menu-desc">つぶしたアボカド、目玉焼き、ハッシュブラウン、チーズ、アイオリ、スモーキーBBQソース</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>BLAT</b><span class="menu-price">$14</span></div><p class="menu-desc">ベーコン、レタス、トマト、つぶしたアボカド、アイオリをダンパーロール（オーストラリアのパン）で</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>プルドポークバーガー</b><span class="menu-price">$15</span></div><p class="menu-desc">10時間じっくり煮込んだ豚肩肉、自家製コールスロー、ピクルス、チーズ、スモーキーBBQソース、ミルクバンズ。ポテトジェムズ付きコンボ $18</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>チキンカツサンド</b><span class="menu-price">$15</span></div><p class="menu-desc">厚切り白パン、トマト、コールスロー、自家製わさびマヨ。ポテトジェムズ付きコンボ $18</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>サーモンベーグル</b><span class="menu-price">$15</span></div><p class="menu-desc">スモークサーモン、自家製ラブネ、赤玉ねぎ、ディル、ケッパー、シードベーグル</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>ハム＆チーズトースティー</b><span class="menu-price">$13</span></div><p class="menu-desc">自家製マスタード＋アイオリ。トマト追加 +$2</p></div></div>
+      <div class="menu-item"><div class="menu-body"><div class="menu-head"><b>自家製サンドイッチ</b><span class="menu-price">店頭で確認</span></div><p class="menu-desc">当日のラインナップは店頭のショーケースで確認</p></div></div>
+
+      <div class="sides-box">
+        <b>🥄 サイドメニュー（追加トッピング）</b>
+        <p><b>$2</b> — Spicy Boyチリオイル<br>
+        <b>$2.5</b> — ハッシュブラウン<br>
+        <b>$3</b> — 目玉焼き ／ フェタ<br>
+        <b>$5</b> — ベーコン ／ アボカド ／ ポテトジェムズ<br>
+        <b>$6</b> — スモークサーモン</p>
+      </div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+        <a class="btn" href="https://maps.app.goo.gl/WXuiTvipqUPCq8B18?g_st=ic" target="_blank" rel="noopener">Googleマップで開く →</a>
+        <a class="btn light" href="#spots">📍 スポット＆マップで見る</a>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin:10px 0 0">※ メニューと価格は写真撮影時点のものです。現地で変わっている場合があります。</p>
     </div>
   </section>
 
@@ -514,8 +627,8 @@ a{color:var(--teal)}
         <ul class="note-list">
           <li>チェックイン 15:00以降 ／ チェックアウト 10:00前（セルフチェックイン）</li>
           <li>荷物は <b>11:30から</b> 玄関リビングに預けOK</li>
-          <li>ロックボックスの暗証番号は <b>2-0-0-2</b> です。開け方の手順とWi-Fi情報はページ上部の「🔑 チェックイン＆Wi-Fi」カードへ</li>
-          <li>現地連絡先：Property Host <b>+61 427 771 721</b></li>
+          <li>ロックボックスの暗証番号は <b>2-0-0-2</b>。開け方の手順はページ上部の「🔑 チェックイン＆Wi-Fi」カードへ</li>
+          <li>現地連絡先：Property Host（スザンナさん）📞 +61 427 771 721</li>
         </ul>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
           <a class="btn" href="https://www.airbnb.jp/rooms/1633815320407309766" target="_blank" rel="noopener">Airbnbを見る</a>
@@ -774,8 +887,8 @@ var spots=[
  {name:"Deux Frères",cat:"タパス",group:"food",lat:-33.86320,lon:151.21080,addr:"6 Loftus Ln, Sydney",desc:"美味しいタパス。サーキュラーキー近くの路地。",url:"https://maps.app.goo.gl/4i8yZbFsLL769G1QA"},
  {name:"Woolworths Sydney Metcentre",cat:"スーパー",group:"sight",lat:-33.86477,lon:151.20678,addr:"60 Margaret St, Sydney",desc:"BBQの買い出しや日用品に。宿から徒歩圏のスーパー。",url:"https://maps.app.goo.gl/sjrvRkkF98WPXDE76"},
  {name:"タロンガ動物園",cat:"動物園",group:"sight",lat:-33.84352,lon:151.24119,addr:"Bradleys Head Rd, Mosman",desc:"フェリー片道 A$7.35・約12分／タクシー A$30〜40。金額は大きく変わらなそう。",url:"https://maps.app.goo.gl/S4ssYyUewuratJvj8"},
- {name:"Obsessive Coffee Disorder",cat:"朝ごはんカフェ ★4.5",group:"coffee",lat:-33.85746,lon:151.20329,addr:"8 Windmill St, Millers Point NSW 2000",desc:"朝ごはんでもいけるカフェ。宿（Millers Point）から近いコーヒーショップ。営業：月〜金 6:30〜15:00／土日は定休日なので平日の朝用。",url:"https://maps.app.goo.gl/Na7qAWADNNU1qBUP7?g_st=ic"},
- {name:"Brix & Beans Coffee House",cat:"朝ごはんカフェ ★4.6",group:"coffee",lat:-33.85700,lon:151.20336,addr:"Shop 1/9 Towns Pl, Millers Point NSW 2000",desc:"朝ごはんでもいけるカフェ。宿から近い。営業：月〜金 6:30〜16:00／土日 7:00〜14:00。週末の朝もOK。",url:"https://maps.app.goo.gl/5f8C9pPAy7o7PkUE9?g_st=ic"},
+ {name:"Obsessive Coffee Disorder",cat:"朝ごはんカフェ ★4.5",group:"coffee",lat:-33.85746,lon:151.20329,addr:"8 Windmill St, Millers Point NSW 2000",desc:"朝ごはんでもいけるカフェ。宿（Millers Point）から近いコーヒーショップ。営業：月〜金 6:30〜15:00／土日は定休日なので平日の朝用。<br>☕ <b>フードメニューの日本語訳</b>（価格AUD）は <a href='#obsessive'>「☕ Obsessive Coffee メニュー（日本語）」</a> のセクションにまとめました。",url:"https://maps.app.goo.gl/WXuiTvipqUPCq8B18?g_st=ic"},
+ {name:"Brix & Beans Coffee House",cat:"朝ごはんカフェ ★4.6",group:"coffee",lat:-33.85700,lon:151.20336,addr:"Shop 1/9 Towns Pl, Millers Point NSW 2000",desc:"朝ごはんでもいけるカフェ。宿から近い。営業：月〜金 6:30〜16:00／土日 7:00〜14:00。週末の朝もOK。<br>🍳 <b>朝食メニューの日本語訳</b>（B1〜B15＋サイド、価格AUD・平日11:30まで・注文はカウンター）は <a href='#breakfast'>「🍳 Brix & Beans 朝食メニュー（日本語）」</a> のセクションにまとめました。",url:"https://maps.app.goo.gl/5NM6PWx9KFB9tZrC7?g_st=ic"},
  {name:"Haven Coffee - Barangaroo",cat:"朝ごはんカフェ ★4.7",group:"coffee",lat:-33.86268,lon:151.20172,addr:"Shop 1/88 Barangaroo Ave, Barangaroo NSW 2000",desc:"朝ごはんでもいけるカフェ。バランガルー散策のついでに。営業：月〜金 7:30〜15:00／土日 8:00〜15:00。",url:"https://maps.app.goo.gl/BiZGqoZEwVAW2T4K8?g_st=ic"},
  {name:"Sacrebleu ! Canelés & Co at Crown Sydney",cat:"朝ごはんカフェ・カヌレ ★4.5",group:"food",lat:-33.86239,lon:151.20110,addr:"1 Barangaroo Ave, Barangaroo NSW 2000（Crown Sydney内）",desc:"カヌレ美味しい 🩷 カヌレ専門のカフェ。営業：水〜金 7:00〜15:00／土日 8:00〜15:00／月・火は定休日なので、行くなら水曜以降に。",url:"https://maps.app.goo.gl/omUm5iwbXUmocvae6?g_st=ic"},
  {name:"The Meat & Wine Co Circular Quay ★予約済み",cat:"レストラン 11/26 18:00",group:"food",lat:-33.86488,lon:151.21050,addr:"2 O'Connell St, Sydney NSW 2000",desc:"11/26（木）18:00・5名で予約済み。最終夜のステーキ。",url:"https://maps.app.goo.gl/5a6iSdCySULQhBWz9"},
@@ -886,6 +999,7 @@ document.getElementById('copyAddr').addEventListener('click',function(){ copyTex
 document.getElementById('copyEntry').addEventListener('click',function(){ copyText('24 Merriman Street, Millers Point, NSW 2000', document.getElementById('copyEntryMsg')); });
 document.getElementById('copyWifiName').addEventListener('click',function(){ copyText('WiFi-H95NE', document.getElementById('copyWifiMsg')); });
 document.getElementById('copyWifiPass').addEventListener('click',function(){ copyText('Spiny922Pick', document.getElementById('copyWifiMsg')); });
+
 </script>
 </body>
 </html>
